@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <title>Meditation Timer Widget</title>
+    <style>
+      body {
+        transition: background-color 0.3s, color 0.3s;
+      }
+      .card {
+        transition: background-color 0.3s, color 0.3s;
+      }
+      .btn-dark-gray {
+        background-color: #4b5563; /* Tailwind's gray-700 */
+        color: #fff;
+      }
+      .btn-dark-gray:hover {
+        background-color: #6b7280; /* Tailwind's gray-500 */
+      }
+      .btn-light-gray {
+        background-color: #d1d5db; /* Tailwind's gray-300 */
+        color: #000;
+      }
+      .btn-light-gray:hover {
+        background-color: #e5e7eb; /* Tailwind's gray-200 */
+      }
+      .btn-transparent {
+        background-color: transparent;
+        color: #000;
+      }
+      .btn-transparent:hover {
+        background-color: #4b5563; /* Tailwind's gray-700 */
+        color: #fff;
+      }
+      .dark-mode .btn-transparent {
+        color: #fff;
+      }
+      .dark-mode .btn-transparent:hover {
+        background-color: #6b7280; /* Tailwind's gray-500 */
+      }
+      .dark-mode .card {
+        background-color: #1f2937; /* Tailwind's gray-800 */
+        color: #fff;
+      }
+      .light-mode .card {
+        background-color: #f9fafb; /* Tailwind's gray-50 */
+        color: #000;
+      }
+      .dark-mode body {
+        background-color: #111827; /* Tailwind's gray-900 */
+        color: #fff;
+      }
+      .light-mode body {
+        background-color: #f9fafb; /* Tailwind's gray-50 */
+        color: #000;
+      }
+      .toggle-btn {
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+        font-size: 1.5rem; /* Adjust font size as needed */
+      }
+      .dark-mode .toggle-btn {
+        color: #fff;
+      }
+      .light-mode .toggle-btn {
+        color: #000;
+      }
+      .dark-mode .toggle-btn:hover {
+        background-color: #6b7280; /* Tailwind's gray-500 */
+      }
+      .light-mode .toggle-btn:hover {
+        background-color: #d1d5db; /* Tailwind's gray-300 */
+      }
+      .dark-mode .fa-moon {
+        color: black;
+      }
+
+      /* Add more styles as needed
+    </style>
+  </head>
+  <body class="light-mode">
+    <div class="p-4 max-w-lg mx-auto">
+      <div
+        class="card p-4 mb-4 border border-gray-300 rounded-md shadow-md relative"
+      >
+        <button
+          id="toggleMode"
+          class="absolute top-2 right-2 toggle-btn bg-gray-200 px-4 py-2 rounded-md"
+        >
+          <i id="icon" class="fas fa-sun"></i>
+        </button>
+        <h1 class="text-2xl font-bold mb-4">Meditation Timer</h1>
+        <div id="timerDisplay" class="text-4xl font-semibold mb-4">
+          00:00:00
+        </div>
+        <div class="flex space-x-4">
+          <button
+            id="startStopButton"
+            class="btn-dark-gray px-4 py-2 rounded-md text-sm font-medium"
+          >
+            Start
+          </button>
+          <button
+            id="pauseButton"
+            class="btn-dark-gray px-4 py-2 rounded-md text-sm font-medium"
+          >
+            Pause
+          </button>
+          <button
+            id="resetButton"
+            class="btn-transparent px-4 py-2 rounded-md text-sm font-medium"
+          >
+            Reset
+          </button>
+        </div>
+      </div>
+      <div
+        id="logCard"
+        class="card p-4 border border-gray-300 rounded-md shadow-md"
+      >
+        <h2 class="text-xl font-bold mb-2">Session Log</h2>
+        <div id="logEntries" class="space-y-2"></div>
+      </div>
+    </div>
+    <script src="meditation-timer.js"></script>
+  </body>
+</html>
